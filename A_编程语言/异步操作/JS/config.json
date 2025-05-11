@@ -1,0 +1,19 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 3000,
+    "ssl": false,
+    "timeout": 5000
+  },
+  "database": {
+    "type": "mysql",
+    "host": "127.99.99.99",
+    "user": "root",
+    "password": "password",
+    "database": "my_database"
+  },
+  "logging": {
+    "level": "info",
+    "filename": "app.log"
+  }
+}
