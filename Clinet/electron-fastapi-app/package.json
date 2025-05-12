@@ -1,0 +1,17 @@
+{
+  "name": "electron-fastapi-app",
+  "version": "1.0.0",
+  "description": "本项目将Python的FastAPI框架与Electron结合，创建一个功能完整的桌面应用程序。通过这种组合，我们既能利用FastAPI强大的后端处理能力，又能借助Electron构建跨平台的现代UI界面。",
+  "main": "electron/main.js", 
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^36.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

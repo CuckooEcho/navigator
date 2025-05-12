@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx" // 或 "react" 取决于你的 React 版本
+    // 其他选项...
+  }
+}

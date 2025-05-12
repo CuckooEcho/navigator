@@ -1,0 +1,48 @@
+/* 基础布局样式 */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* 侧边导航栏样式 */
+.sidebar {
+  width: 240px;
+  background: #2d3748;
+  padding: 20px;
+}
+
+.nav-item {
+  color: #cbd5e0;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background: #4a5568;
+}
+
+/* 主内容区样式 */
+.content {
+  flex: 1;
+  padding: 24px;
+  background: #edf2f7;
+}
+
+.search-bar {
+  margin-bottom: 24px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
