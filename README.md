@@ -4,8 +4,8 @@
 
 | 文件夹名称 | 说明 | 内部 README.md 引用 |
 | ---- | ---- | ---- |
-| Back-end-Frameworks | 涵盖FastAPI、Django、Flask等后端框架学习笔记，包含原理、语法、实战案例剖析，助于深入掌握后端框架并搭建后端服务。 | [Back-end-Frameworks/README.md](Back-end-Frameworks/README.md) |
-| Client | 记录客户端开发知识，含Electron应用开发技巧，如界面设计、接口对接、性能优化，以及Web客户端开发相关内容，助力构建优质客户端应用。 | [Client/README.md](Client/README.md) |
+| Back-end-Frameworks | 涵盖 FastAPI、Django、Flask等后端框架学习笔记，包含原理、语法、实战案例剖析，助于深入掌握后端框架并搭建后端服务。 | [Back-end-Frameworks/README.md](Back-end-Frameworks/README.md) |
+| Client | 记录客户端开发知识，含 Electron 应用开发技巧，如界面设计、接口对接、性能优化，以及Web客户端开发相关内容，助力构建优质客户端应用。 | [Client/README.md](Client/README.md) |
 | Database | 围绕MySQL、PostgreSQL等关系型数据库和MongoDB等非关系型数据库，记录表结构设计、SQL优化、数据存储等笔记，帮助掌握数据库设计与管理。 | [Database/README.md](Database/README.md) |
 | Deep-Learning | 汇集TensorFlow、PyTorch等深度学习框架笔记，含基础使用、架构搭建、训练技巧、数据集处理等，还涉前沿算法探讨，便于深度学习实践。 | [Deep-Learning/README.md](Deep-Learning/README.md) |
 | Front-end-Frameworks | 存放React、Vue、Angular等前端框架学习记录，有组件开发、状态管理、性能优化等内容，可系统学习前端框架提升开发能力。 | [Front-end-Frameworks/README.md](Front-end-Frameworks/README.md) |
