@@ -1,6 +1,6 @@
 # Navigator Learning Hub
 
-一个个人技术学习与实践的知识库，受 [`microsoft/ai-agents-for-beginners`](https://github.com/microsoft/ai-agents-for-beginners) 的课程式结构启发，按模块化、可扩展的方式整理各类技术笔记与示例代码。
+一个个人技术学习与实践的知识库，按模块化、可扩展的方式整理各类技术笔记与示例代码。
 
 > 本仓库目前主要覆盖：编程语言基础、JavaScript 异步、React、Electron 客户端以及 LangGraph AI 示例，其他目录将逐步完善。
 
