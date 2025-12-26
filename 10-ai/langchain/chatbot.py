@@ -43,9 +43,9 @@ class State(TypedDict):
 # 3. 配置Deepseek模型
 # ----------------------------
 # 设置Deepseek API密钥（请替换为您自己的密钥）
-os.environ["OPENAI_API_KEY"] = "sk-bb019998b6564e93bc66fb5c0a2e4945"
+os.environ["OPENAI_API_KEY"] = ""
 # Deepseek的OpenAI兼容接口地址
-os.environ["OPENAI_BASE_URL"] = "https://api.deepseek.com/v1"
+os.environ["OPENAI_BASE_URL"] = ""
 
 # 初始化Deepseek模型（以OpenAI兼容模式）
 llm = ChatOpenAI(

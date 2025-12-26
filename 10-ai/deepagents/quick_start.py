@@ -11,13 +11,13 @@ tavily_client = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
 
 # 设置Deepseek API密钥（请替换为您自己的密钥）
 os.environ["OPENAI_API_KEY"] = os.environ["OPENAI_API_KEY"]
-# Deepseek的OpenAI兼容接口地址
 os.environ["OPENAI_BASE_URL"] = os.environ["OPENAI_BASE_URL"]
 
 # 初始化Deepseek模型（以OpenAI兼容模式）
 llm = ChatOpenAI(
-    model_name="deepseek-chat",  # Deepseek对话模型名称
+    model="deepseek-chat",  # Deepseek对话模型名称
     temperature=0.7,             # 随机性参数，0表示更确定，1表示更多样
+    base_url=os.environ["OPENAI_BASE_URL"]
 )
 
 def internet_search(

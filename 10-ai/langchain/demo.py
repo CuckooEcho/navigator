@@ -3,8 +3,8 @@ from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI  # 用于兼容 OpenAI 格式的模型
 
 # 1. 配置 Deepseek 模型（利用其 OpenAI 兼容接口）
-os.environ["OPENAI_API_KEY"] = "sk-bb019998b6564e93bc66fb5c0a2e4945"  # 替换为实际密钥
-os.environ["OPENAI_BASE_URL"] = "https://api.deepseek.com/v1"  # Deepseek 的 OpenAI 兼容接口
+os.environ["OPENAI_API_KEY"] = ""  # 替换为实际密钥
+os.environ["OPENAI_BASE_URL"] = ""  # Deepseek 的 OpenAI 兼容接口
 
 # 初始化 Deepseek 模型（以 OpenAI 兼容模式）
 deepseek_model = ChatOpenAI(
