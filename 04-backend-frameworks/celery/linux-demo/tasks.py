@@ -52,17 +52,45 @@ celery_app = Celery(
 )
 
 # Celery配置（Linux 适配版）
+# Celery配置（Linux 适配版，针对大模型低并发/长耗时任务优化）
 celery_app.conf.update(
+    # ========== 序列化配置 ==========
+    # 任务序列化格式：使用JSON（跨语言兼容、轻量，避免pickle安全风险）
     task_serializer="json",
+    # 任务结果序列化格式：与任务序列化保持一致，确保结果解析无兼容问题
     result_serializer="json",
+    # 允许接收的内容类型：仅接收JSON格式，过滤非法请求，提升安全性
     accept_content=["json"],
-    worker_concurrency=2,          # 根据CPU核心数调整（如4/8）
+
+    # ========== 并发控制（核心：适配大模型低并发特性） ==========
+    # Worker并发数：Linux多核环境下设为2（可按CPU核心数调整，如4/8）
+    # 取值原因：大模型推理是计算密集型任务，并发过高会导致CPU/GPU资源耗尽，触发超时
+    worker_concurrency=2,         
+
+    # ========== 任务确认机制（避免任务丢失） ==========
+    # 任务延迟确认：Worker执行完任务后再向Broker确认任务完成
+    # 作用：若Worker执行中崩溃，Broker会将任务重新分发给其他Worker，避免任务丢失
     task_acks_late=True,
+
+    # ========== 任务预取控制（避免堆积） ==========
+    # Worker预取任务数：每次仅从Broker预取1个任务
+    # 取值原因：大模型任务耗时极长（分钟/小时级），预取过多会导致任务堆积在Worker本地，无法被其他Worker调度
     worker_prefetch_multiplier=1,
+
+    # ========== 结果存储配置 ==========
+    # 任务结果过期时间：3600秒（1小时）
+    # 作用：避免Redis中积压大量过期结果，占用内存；大模型任务结果无需长期存储，1小时足够业务回调处理
     result_expires=3600,
+
+    # ========== 异常容错配置 ==========
+    # Worker丢失时拒绝任务：若Worker进程意外终止（如OOM、崩溃），Broker会拒绝该Worker未完成的任务
+    # 作用：防止无效任务占用队列，确保任务重新分发到健康的Worker
     task_reject_on_worker_lost=True,
-    # 开启Celery自身日志（与自定义日志互补）
+
+    # ========== 日志格式化配置 ==========
+    # Worker进程日志格式：使用自定义的LOG_FORMAT（包含时间/进程ID/文件行号，便于定位问题）
     worker_log_format=LOG_FORMAT,
+    # 任务执行日志格式：与Worker日志格式统一，确保任务全生命周期日志格式一致
     worker_task_log_format=LOG_FORMAT
 )
 
